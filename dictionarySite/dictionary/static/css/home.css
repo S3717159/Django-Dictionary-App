@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
+body{
+    background-image: url('../images/background.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.colour-overlay{
+    width: 100vw;
+    height: 100vh;
+    background: #0092CB;
+    opacity: .7;
+    z-index: 0;
+}
 .searchTextRow{
 width: 100vw;
 height: 40vh;
@@ -25,6 +40,7 @@ height: 40vh;
     text-align: center;
 
     color: white;
+    opacity: 1;
     text-shadow: 0 0 3px #0059CD, 0 0 3px #0059CD, 0 0 3px #0059CD, 0 0 3px #0059CD; 
 }
 
@@ -59,3 +75,9 @@ height: 40vh;
 button:focus {
     outline:0;
 }
+
+.searchImage{
+    width:5vw;
+    height: 5vw;;
+}
+
