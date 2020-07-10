@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+.searchTextRow{
+width: 100vw;
+height: 40vh;
+}
+
+.searchBarRow{
+    width: 100vw;
+    height: 20vh;
+}
+
+.searchButtonRow{
+    width: 100vw;
+    height: 40vh;
+}
+
+.searchHeading{
+    font-family: Rancho;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 5vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+    text-shadow: 0 0 3px #0059CD, 0 0 3px #0059CD, 0 0 3px #0059CD, 0 0 3px #0059CD; 
+}
+
+.searchInput{
+    height: 40%;
+    width: 45vw;
+    background: #FFFFFF;
+    border: 2px solid #0059CD;
+    box-sizing: border-box;
+    border-radius: 100px;
+    text-align: center;
+    font-family: Rancho;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.5vw;
+}
+
+
+
+.searchButton{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    background: white;
+    border: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+button:focus {
+    outline:0;
+}
