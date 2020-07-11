@@ -16,10 +16,12 @@ def index(request):
 
 @csrf_exempt
 def result(request, word):
+    
     context ={
         'word': word,
         'meaning' : dictionary.meaning(word),
         'synonym' : dictionary.synonym(word),
-        'antonym' : dictionary.antonym(word)
+        'antonym' : dictionary.antonym(word),
+        'wordType': list( dictionary.meaning(word).keys())
         }
     return render(request, "result.html", context) 

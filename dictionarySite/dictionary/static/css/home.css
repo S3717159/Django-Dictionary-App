@@ -79,5 +79,11 @@ button:focus {
 .searchImage{
     width:5vw;
     height: 5vw;;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition:         transform .8s ease-in-out;
 }
 
+.searchImage:hover {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
