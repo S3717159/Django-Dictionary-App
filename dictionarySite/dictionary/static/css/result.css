@@ -1,0 +1,29 @@
+/* body{
+    background-image: url('../images/background.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.colour-overlay{
+    width: 100vw;
+    height: 100vh;
+    background: #0092CB;
+    opacity: .7;
+    z-index: 0;
+} */
+
+.headerRow{
+    width: 100vw;
+    height: 13vh;
+}
+
+.contentRow{
+    width: 100vw;
+    height: 80vh;
+}
+
+.subRow{
+    height: 30%;
+    width: 100%;
+}

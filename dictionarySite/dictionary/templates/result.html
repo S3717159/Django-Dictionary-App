@@ -1,19 +1,69 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/result.css' %}">
+    </head>
 
-<h1>{{word}}</h1>
+    <body>
+        <div class="container-fluid colour-overlay" >
+            <div class='row'>
+                <div class='row headerRow'>
+                    <div class="col-md-12 d-flex align-items-center justify-content-center">
+                        <h1>{{word}}</h1>
+                    </div>
+                    
+                </div>
+                <div class='row contentRow'>
+                    <div class="col-md-6 ">
+                        <div class='row subRow'>
+                            <div class='col-md-12 d-flex align-items-center justify-content-center'>            
+                                <h2>Description</h2>
+                                <h3>{{meaning}}</h3>
+                            </div>
+                        </div>
+                        <div class='row subRow'>
+                            <div class='col-md-12 d-flex align-items-center justify-content-center'>           
+                                <h2>Description</h2>
+                                <h3>{{meaning}}</h3>
+                            </div>
+                        </div>
+                        <div class='row subRow'>
+                            <div class='col-md-12 d-flex align-items-center justify-content-center'>
+                                <h2>Description</h2>
+                                <h3>{{meaning}}</h3>
+                            </div>
+                        </div>
+                    </div>
 
-<h2>Description</h2>
-<h3>{{meaning}}</h3>
-<h2>Synonym</h2>
-<h3>{{synonym}}</h3>
-<h2>Antonym</h2>
-<h3>{{antonym}}</h3>
-
-<h2>word Type</h2>
-<h3>{{wordType}}</h3>
-<a  href="../../">Back</a>
-
-</body>
+                    <div class="col-md-6">
+                        <div class='row subRow '>
+                            <div class='col-md-12 d-flex align-items-center justify-content-center'>
+                                <h2>Synonym</h2>
+                                <h3>{{synonym}}</h3>
+                            </div>
+                        </div>
+                        <div class='row subRow' >
+                            <div class='col-md-12 d-flex align-items-center justify-content-center'>
+                                <h2>Antonym</h2>
+                                <h3>{{antonym}}</h3>                    
+                            </div>
+                        </div>
+                        <div class='row subRow'>
+                            <div class='col-md-12 d-flex align-items-center justify-content-center'>
+                                <h2>word Type</h2>
+                                <h3>{{wordType}}</h3>
+                                <a  href="../../">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    
+    </body>
 </html>
