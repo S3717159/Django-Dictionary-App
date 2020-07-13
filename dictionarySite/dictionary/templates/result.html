@@ -25,33 +25,35 @@
                     <div class="col-md-6 ">
                         <div class='row subRow'>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>      
+                                
                                 <div id="carouselExampleIndicators" class="carousel slide sliderDiv" data-ride="carousel">
                                     <ol class="carousel-indicators">
-                                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
 
-                                      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        {% for noun in meaning.Noun%}
+                                       
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="{{loop.counter}}+1"></li>
+                                        {% endfor %}          
 
                                     </ol>
                                     <div class="carousel-inner">
-                                      <div class="carousel-item active">
-                                        <div  class="d-block w-100 carouselText">Syed</div>
-                                      </div>
-                                      <div class="carousel-item">
-                                        <div  class="d-block w-100 carouselText">Saad</div>
-                                      </div>
-                                      <div class="carousel-item">
-                                        <div  class="d-block w-100 carouselText">Ali</div>
-                                      </div>
-                                      <div class="carousel-item">
-                                        <div  class="d-block w-100 carouselText">Ali</div>
-                                      </div>
-                                      <div class="carousel-item">
-                                        <div  class="d-block w-100 carouselText">Ali</div>
-                                      </div>
+                                        {% for noun in meaning.Noun%}
+                                            {% if forloop.counter == 1 %}
+                                                <div class="carousel-item active">
+                                                    <div  class="carouselText">{{noun}}</div>
+                                                </div>
+                                            {% else %}
+                                                <div class="carousel-item">
+                                                    <div  class="carouselText">{{noun}}</div>
+                                                </div>
+                                            {% endif %}
+                                            <div class="carousel-caption">
+                                                Noun Definition:
+                                            </div>
+                                        {% endfor %}           
                                     </div>
+                                    
                                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                       <span class="sr-only">Previous</span>
@@ -65,13 +67,12 @@
                         </div>
                         <div class='row subRow'>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>           
-                                <h2>Description</h2>
-                                <h3>{{meaning}}</h3>
+                                <h3>{{meaning.Noun}}</h3>
                             </div>
                         </div>
                         <div class='row subRow'>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>
-                                <h2>Description</h2>
+                            
                                 <h3>{{meaning}}</h3>
                             </div>
                         </div>
