@@ -25,15 +25,19 @@
                     <div class="col-md-6 ">
                         <div class='row subRow'>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>      
-                                
-                                <div id="carouselExampleIndicators" class="carousel slide sliderDiv" data-ride="carousel">
+                                <div id="nouncarousel" class="carousel slide sliderDiv" data-ride="carousel">
                                     <ol class="carousel-indicators">
 
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                        {% for noun in meaning.Noun%}
-                                       
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="{{loop.counter}}+1"></li>
+                                        {% for adjective in meaning.Adjective%}
+                                            {% if forloop.counter == 1 %}
+                                                <li data-target="#nouncarousel" data-slide-to="0" class="active"></li>
+                                            {% else %}
+                                            {% with counterValue=forloop.counter %}
+                                            
+                                                <li data-target="#nouncarousel" data-slide-to='{{ counterValue|add:"-1" }}'></li>
+                                            {% endwith %}
+                                                
+                                            {% endif %}
                                         {% endfor %}          
 
                                     </ol>
@@ -49,31 +53,113 @@
                                                 </div>
                                             {% endif %}
                                             <div class="carousel-caption">
-                                                Noun Definition:
+                                                Noun Definitions:
                                             </div>
                                         {% endfor %}           
                                     </div>
                                     
-                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <a class="carousel-control-prev" href="#nouncarousel" role="button" data-slide="prev">
                                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                       <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <a class="carousel-control-next" href="#nouncarousel" role="button" data-slide="next">
                                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                       <span class="sr-only">Next</span>
                                     </a>
-                                  </div>
+                                </div>
                             </div>      
                         </div>
                         <div class='row subRow'>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>           
-                                <h3>{{meaning.Noun}}</h3>
+                                <div id="verbcarousel" class="carousel slide sliderDiv" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+
+                                        {% for verb in meaning.Verb%}
+                                            {% if forloop.counter == 1 %}
+                                                <li data-target="#verbcarousel" data-slide-to="0" class="active"></li>
+                                            {% else %}
+                                            {% with counterValue=forloop.counter %}
+                                            
+                                                <li data-target="#verbcarousel" data-slide-to='{{ counterValue|add:"-1" }}'></li>
+                                            {% endwith %}
+                                                
+                                            {% endif %}
+                                        {% endfor %}          
+
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        {% for verb in meaning.Verb%}
+                                            {% if forloop.counter == 1 %}
+                                                <div class="carousel-item active">
+                                                    <div  class="carouselText">{{verb}}</div>
+                                                </div>
+                                            {% else %}
+                                                <div class="carousel-item">
+                                                    <div  class="carouselText">{{verb}}</div>
+                                                </div>
+                                            {% endif %}
+                                            <div class="carousel-caption">
+                                                Verb Definitions:
+                                            </div>
+                                        {% endfor %}           
+                                    </div>
+                                    
+                                    <a class="carousel-control-prev" href="#verbcarousel" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#verbcarousel" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class='row subRow'>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>
                             
-                                <h3>{{meaning}}</h3>
+                                <div id="adjectivecarousel" class="carousel slide sliderDiv" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+
+                                        {% for adjective in meaning.Adjective%}
+                                            {% if forloop.counter == 1 %}
+                                                <li data-target="#adjectivecarousel" data-slide-to="0" class="active"></li>
+                                            {% else %}
+                                            {% with counterValue=forloop.counter %}
+                                            
+                                                <li data-target="#adjectivecarousel" data-slide-to='{{ counterValue|add:"-1" }}'></li>
+                                            {% endwith %}
+                                                
+                                            {% endif %}
+                                        {% endfor %}          
+
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        {% for adjective in meaning.Adjective%}
+                                            {% if forloop.counter == 1 %}
+                                                <div class="carousel-item active">
+                                                    <div  class="carouselText">{{adjective}}</div>
+                                                </div>
+                                            {% else %}
+                                                <div class="carousel-item">
+                                                    <div  class="carouselText">{{adjective}}</div>
+                                                </div>
+                                            {% endif %}
+                                            <div class="carousel-caption">
+                                                Adjective Definitions:
+                                            </div>
+                                        {% endfor %}           
+                                    </div>
+                                    
+                                    <a class="carousel-control-prev" href="#adjectivecarousel" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#adjectivecarousel" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,8 +167,48 @@
                     <div class="col-md-6">
                         <div class='row subRow '>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>
-                                <h2>Synonym</h2>
-                                <h3>{{synonym}}</h3>
+                                <div id="nouncarousel" class="carousel slide sliderDiv" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+
+                                        {% for adjective in meaning.Adjective%}
+                                            {% if forloop.counter == 1 %}
+                                                <li data-target="#nouncarousel" data-slide-to="0" class="active"></li>
+                                            {% else %}
+                                            {% with counterValue=forloop.counter %}
+                                            
+                                                <li data-target="#nouncarousel" data-slide-to='{{ counterValue|add:"-1" }}'></li>
+                                            {% endwith %}
+                                                
+                                            {% endif %}
+                                        {% endfor %}          
+
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        {% for noun in meaning.Noun%}
+                                            {% if forloop.counter == 1 %}
+                                                <div class="carousel-item active">
+                                                    <div  class="carouselText">{{noun}}</div>
+                                                </div>
+                                            {% else %}
+                                                <div class="carousel-item">
+                                                    <div  class="carouselText">{{noun}}</div>
+                                                </div>
+                                            {% endif %}
+                                            <div class="carousel-caption">
+                                                Noun Definitions:
+                                            </div>
+                                        {% endfor %}           
+                                    </div>
+                                    
+                                    <a class="carousel-control-prev" href="#nouncarousel" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#nouncarousel" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class='row subRow' >
