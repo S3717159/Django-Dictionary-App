@@ -24,9 +24,12 @@ def result(request, word):
         'antonym' : dictionary.antonym(word),
         'wordType': list( dictionary.meaning(word).keys())
         # 'word': 'word',
-        # 'meaning' :'meaning',
-        # 'synonym' : 'synonym',
-        # 'antonym' : 'antonym',
+        # 'meaning' : {'Noun': ['A', 'B', 'C'],
+        #             'Adjective': ['A', 'B', 'C'],
+        #             'Verb': ['A', 'B', 'C'],
+        #             'Adverb': ['A', 'B', 'C']},
+        # 'synonym' : ['SA', 'SB', 'SC'],
+        # 'antonym' : ['AA', 'AB', 'AC'],
         # 'wordType': 'wordType'
         }
     
