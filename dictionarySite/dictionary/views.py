@@ -6,6 +6,7 @@ dictionary=PyDictionary()
 
 @csrf_exempt
 def index(request):
+    print(dictionary.synonym('the'))
     if request.method == 'POST':
         print(request.POST['word'])
         return redirect('result/' + request.POST['word'])
@@ -16,7 +17,6 @@ def index(request):
 
 @csrf_exempt
 def result(request, word):
-    
     context ={
         'word': word,
         'meaning' : dictionary.meaning(word),

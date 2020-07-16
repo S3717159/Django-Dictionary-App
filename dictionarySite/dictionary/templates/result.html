@@ -22,13 +22,13 @@
                     
                 </div>
                 <div class='row contentRow'>
-                    <div class="col-md-6 ">
+                    <div class="col-md-6 mb-5">
                         <div class='row mb-4 subRow'>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>      
                                 <div id="nouncarousel" class="carousel slide sliderDiv" data-ride="carousel">
                                     <ol class="carousel-indicators">
 
-                                        {% for adjective in meaning.Adjective%}
+                                        {% for noun in meaning.Noun%}
                                             {% if forloop.counter == 1 %}
                                                 <li data-target="#nouncarousel" data-slide-to="0" class="active"></li>
                                             {% else %}
@@ -164,7 +164,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-5">
                         <div class='row mb-4 subRow '>
                             <div class='col-md-12 d-flex align-items-center justify-content-center'>
                                 <div id="adverbcarousel" class="carousel slide sliderDiv" data-ride="carousel">
